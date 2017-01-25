@@ -18,7 +18,7 @@ class AddImagesTable extends Migration
             $table->string('name');
             $table->integer('article_id')->unsigned();
 
-            $table->foreign('article_id')->references('id')->onDelete('cascade');
+            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
 
             $table->timestamps();
         });

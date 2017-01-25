@@ -3,18 +3,13 @@
 @section('title', $article->title)
 
 @section('content')
-  <h3 class="title-front left">{{ $article->title }}</h3>
-  <hr>
+
   <div class="row">
     <div class="col-md-9">
-      @foreach($article->images as $image)
-        <img class="img-responsive img-article" src="{{ asset('images/articles/' . $image->name) }}" alt="..." width="300">
-      @endforeach
+      <h1 class="text-info text-center">{{ $article->title }}</h1>
       {!! $article->content !!}
-      <h3>Comentarios</h3>
-      @foreach($article->tags as $tag)
-        {{ $tag->name }}
-      @endforeach
+      <h3>Publicado por:</h3>
+      {{ $article->user->name }}
       <hr>
       <div id="disqus_thread"></div>
       <script>
