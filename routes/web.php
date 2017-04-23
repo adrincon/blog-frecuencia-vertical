@@ -77,11 +77,11 @@ Route::get('articles/{id}/destroy', [
     'as'    =>  'articles.destroy'
   ]);
 
-Route::get('images', [
-  'uses'  =>  'ImagesController@index',
-  'as'    =>  'images.index'
-  ]);
-});
+  Route::get('images', [
+    'uses'  =>  'ImagesController@index',
+    'as'    =>  'images.index'
+    ]);
+  });
 
 
   Auth::routes();

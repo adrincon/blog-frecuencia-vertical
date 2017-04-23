@@ -2,37 +2,41 @@
 
 @section('content')
 
-	<h3 class="title-front left">Ultimos Articulos</h3>
-
 	<div class="row">
 		<div class="col-md-8">
 			<div class="row">
 
-					@foreach($articles as $article)
-
-				<div class="col-md-6">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<a href="{{ route('front.view.article', $article->slug) }}" class="thumbnail">
-							@foreach($article->images as $image)
-								<img class="img-responsive img-article" src="{{ asset('images/articles/' . $image->name) }}" alt="...">
-							@endforeach
-							</a>
-								<a href="{{ route('front.view.article', $article->slug) }}">
-								<h3 class="text-center">{{ $article->title }}</h3>
-								</a>
-							<hr>
-							<i class="fa fa-folder-open-o"></i> <a href="{{ route('front.search.category', $article->
-								category->name) }}">{{ $article->category->name }}</a>
-							<div class="pull-right">
-								<i class="fa fa-clock-o"></i> {{ $article->created_at->diffForHumans() }}
-							</div>
-						</div>
-					</div>
+				<div class="miga-de-pan">
+					<ol class="breadcrumb">
+						<li><strong>Ultimos Articulos</strong></li>
+					</ol>
 				</div>
 
-					@endforeach
+					@foreach($articles as $article)
+					<article class="post clearfix">
+	                        <a href="{{ route('front.view.article', $article->slug) }}" class="thumb pull-left">
+								@foreach($article->images as $image)
+	                            <img class="img-thumbnail" src="{{ asset('images/articles/' . $image->name) }}" alt="">
+								@endforeach
+	                        </a>
+	                        <h2 class="post-title">
+	                            <a href="{{ route('front.view.article', $article->slug) }}">{{ $article->title }}</a>
+	                        </h2>
+	                        <p>Publicado <span class="post-fecha">{{ $article->created_at->diffForHumans() }}
+							</span> por <span class="post-autor"><strong>{{ $article->user->name }}</strong></span></p>
+	                        <p class="post-contenido text-justify">
+	                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	                        </p><br>
+	                        <div class="contenedor-botones">
+								<i class="fa fa-folder-open-o"></i> <a href="{{ route('front.search.category', $article->category->name) }}">{{ $article->category->name }}</a>
 
+							<div class="pull-right">
+								<a href="{{ route('front.view.article', $article->slug) }}" class="btn btn-primary">Leer Mas</a>
+							</div>
+
+	                        </div>
+	                    </article>
+						@endforeach
 			</div>
 			{!! $articles->render() !!}
 		</div>

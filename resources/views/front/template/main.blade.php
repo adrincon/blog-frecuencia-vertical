@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-
 	<meta charset="UTF-8">
-
-	<title>@yield('title', 'Home') | Blog Facilito</title>
-	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/journjal/bootstrap.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/general.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/estilos.css') }}">
 	<link rel="stylesheet" href="{{ asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+	<title>@yield('title', 'Home') | Frecuencia Vertical</title>
 </head>
 <body>
 
@@ -25,6 +25,7 @@
 
 	</div>
 
-	<script src="{{ asset('plugins/jquery/js/jquery-3.1.1.js') }}"> </script>
+	<script src="{{ asset('plugins/js-Per/jquery.js') }}"></script>
+    <script src="{{ asset('plugins/js-Per/bootstrap.min.js') }}"></script>
 </body>
 </html>
