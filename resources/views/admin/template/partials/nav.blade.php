@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -21,7 +21,7 @@
             @endif
             <li><a href="{{ route('categories.index') }}">Categorias</a></li>
             <li><a href="{{ route('articles.index') }}">Articulos</a></li>
-            <li><a href="{{ route('images.index') }}">Imagenes</a></li>
+            <!--<li><a href="{{ route('images.index') }}">Imagenes</a></li>!-->
             <li><a href="{{ route('tags.index') }}">Tags</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

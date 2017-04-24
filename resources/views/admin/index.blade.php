@@ -4,69 +4,43 @@
 
 @section('content')
 <style>
-  *{
-  margin: 0;
-  padding: 0;
-  }
-  header, .main{
-  width: 90%;
-  max-width: 1000px;
-  margin: 20px auto;
-  }
-  header nav{
-  background: #528FD5;
-  overflow: hidden;
-  }
-  header nav ul{
-  list-style:none;
+  .jumbotron{
+      color: black;
+      padding: 20px 0;
   }
 
-  header nav ul li{
-    float: left;
+  .jumbotron  h1 img{
+      padding-right: 40px;
   }
 
-  header nav ul li a{
-    padding: 10px 20px;
-    display: block;
-    color:#fff;
-    text-decoration: none;
+  .jumbotron a{
+      text-decoration: none;
+      color: black;
   }
 
-  header nav ul li a:hover{
-    background: #75ACEC;
+  .jumbotron a:hover{
+      color: #ffffff;
   }
 
 </style>
 
-<header>
-    <div class="logotipo">
-      <img src="\blog\public\images\logo\Flama.jpg" width=100 alt="">
-    </div>
-    <nav>
-      <ul>
+<section class="jumbotron">
+   <div class="container">
+       <div class="row">
+        <a href="{{ route('front.index') }}"><h1><img align="left" src="{{ asset('images\logo\01.png') }}" alt="" height="120px">Blog Frecuencia Vertical</h1></a>
+        </div>
+   </div>
+</section>
+
+<div class="container">
+    <div class="btn-group btn-group-lg" role="group" aria-label="...">
         @if(Auth::user()->admin())
-        <li><a href="{{ route('users.create') }}">Crear Usuario</a></li>
+          <a class="btn btn-default" href="{{ route('users.create') }}">Crear Usuario</a>
         @endif
-        <li><a href="{{ route('categories.create') }}">Crear Categoria</a></li>
-        <li><a href="{{ route('articles.create') }}">Crear Articulo</a></li>
-        <li><a href="{{ route('images.index') }}">Galeria de Imagenes</a></li>
-        <li><a href="{{ route('tags.create') }}">Crear Tags</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="main">
-    <article>
-        <h2>Contenido de Relleno</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-          qui officia deserunt mollit anim id est laborum.</p>
-      </article>
-  </section>
-
+        <a class="btn btn-default" href="{{ route('categories.create') }}">Crear Categoria</a>
+        <a class="btn btn-default" href="{{ route('articles.create') }}">Crear Articulo</a>
+        <a class="btn btn-default" href="{{ route('tags.create') }}">Crear Tag</a>
+    </div>
+</div>
 
 @endsection
